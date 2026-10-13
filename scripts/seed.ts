@@ -251,7 +251,8 @@ async function main() {
   await pool.end();
   console.log("Données de démonstration créées (fictives). Comptes :");
   for (const u of ["paul.martin", "sophie.durand", "claire.adv", "admin"]) console.log(`  - ${u}${DEMO_DOMAIN}`);
-  console.log("Mot de passe : valeur de DEMO_PASSWORD.");
+  // Données fictives sur un poste local uniquement (le script est refusé en production).
+  console.log(`Mot de passe des comptes de démonstration : ${password}`);
 }
 
 main().catch((err) => {
