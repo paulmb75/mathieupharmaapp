@@ -1,0 +1,91 @@
+/*
+ * Variables de design communes — Mathieu Pharma.
+ * Toute couleur, taille ou rayon utilisé dans l'interface doit passer par ces variables.
+ */
+:root {
+  /* Marque */
+  --mp-primary: #0b4bbf;
+  --mp-primary-hover: #093e9f;
+  --mp-primary-active: #07337f;
+  --mp-primary-soft: #eaf1fc;
+  --mp-primary-softer: #f4f8fe;
+  --mp-primary-ring: rgba(11, 75, 191, 0.22);
+  --mp-brand-navy: #1e3a8a;
+
+  /* Texte */
+  --mp-heading: #0f2147;
+  --mp-text: #1d2b48;
+  --mp-muted: #5b6a82;
+  --mp-subtle: #8693a7;
+  --mp-on-primary: #ffffff;
+
+  /* Surfaces */
+  --mp-bg: #ffffff;
+  --mp-bg-app: #f5f7fb;
+  --mp-surface: #ffffff;
+  --mp-surface-muted: #f7f9fc;
+  --mp-border: #e3e8ef;
+  --mp-border-strong: #cdd6e2;
+  --mp-overlay: rgba(15, 33, 71, 0.45);
+
+  /* Tons de statut */
+  --mp-neutral-fg: #475569;
+  --mp-neutral-bg: #eef1f5;
+  --mp-info-fg: #0b4bbf;
+  --mp-info-bg: #e7effd;
+  --mp-warning-fg: #b45309;
+  --mp-warning-bg: #fff4e2;
+  --mp-warning-border: #fbe1b4;
+  --mp-warning-icon: #f59e0b;
+  --mp-accent-fg: #0f6e68;
+  --mp-accent-bg: #e3f4f2;
+  --mp-success-fg: #15803d;
+  --mp-success-bg: #e6f6ec;
+  --mp-success-icon: #22a04b;
+  --mp-danger-fg: #b42318;
+  --mp-danger-bg: #fdecea;
+  --mp-danger-border: #f6c9c4;
+
+  /* Typographie */
+  --mp-font: "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mp-text-xs: 0.75rem;   /* 12 */
+  --mp-text-sm: 0.8125rem; /* 13 */
+  --mp-text-md: 0.9375rem; /* 15 */
+  --mp-text-base: 1rem;    /* 16 — minimum des champs (évite le zoom iOS) */
+  --mp-text-lg: 1.125rem;  /* 18 */
+  --mp-text-xl: 1.375rem;  /* 22 */
+  --mp-text-2xl: 1.75rem;  /* 28 */
+  --mp-text-3xl: 2rem;     /* 32 */
+  --mp-weight-regular: 400;
+  --mp-weight-medium: 500;
+  --mp-weight-semibold: 600;
+  --mp-weight-bold: 700;
+
+  /* Espacements (base 4 px) */
+  --mp-space-1: 4px;
+  --mp-space-2: 8px;
+  --mp-space-3: 12px;
+  --mp-space-4: 16px;
+  --mp-space-5: 20px;
+  --mp-space-6: 24px;
+  --mp-space-8: 32px;
+  --mp-space-10: 40px;
+  --mp-gutter: 20px;
+
+  /* Rayons et ombres */
+  --mp-radius-sm: 8px;
+  --mp-radius-md: 12px;
+  --mp-radius-lg: 16px;
+  --mp-radius-pill: 999px;
+  --mp-shadow-sm: 0 1px 2px rgba(15, 33, 71, 0.05);
+  --mp-shadow-md: 0 2px 8px rgba(15, 33, 71, 0.06), 0 1px 2px rgba(15, 33, 71, 0.04);
+  --mp-shadow-lg: 0 12px 32px rgba(15, 33, 71, 0.16);
+
+  /* Dimensions */
+  --mp-control-height: 48px;
+  --mp-touch-min: 44px;
+  --mp-bottom-nav-height: 64px;
+  --mp-sidebar-width: 256px;
+  --mp-content-max: 1180px;
+  --mp-safe-bottom: env(safe-area-inset-bottom, 0px);
+}

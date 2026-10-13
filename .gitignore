@@ -1,0 +1,24 @@
+# Dépendances et builds
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environnement — ne jamais committer de secrets
+.env
+.env.*
+!.env.example
+
+# Justificatifs stockés localement — jamais dans Git
+storage/
+test-storage/
+
+# Tests
+test-results/
+playwright-report/
+coverage/
+
+# Divers
+.DS_Store
+npm-debug.log*
