@@ -54,9 +54,11 @@ npm run dev                   # puis ouvrir http://localhost:3000
 Avec un PostgreSQL déjà installé (sans Docker) : créer les bases `mathieupharma` et `mathieupharma_test`, puis
 adapter `DATABASE_URL` et `TEST_DATABASE_URL` dans `.env`.
 
-**Tester sur téléphone** (même réseau Wi-Fi que l’ordinateur) : lancer `npx next dev -H 0.0.0.0`, puis ouvrir
-`http://<adresse-IP-de-l’ordinateur>:3000` sur le téléphone. L’adresse IP s’affiche dans le terminal (ligne
-« Network »). La photo des justificatifs passe par l’appareil photo natif du téléphone.
+**Tester sur téléphone** (même réseau Wi-Fi que l’ordinateur) : lancer `npm run dev:telephone` au lieu de
+`npm run dev`, puis ouvrir sur le téléphone `http://<adresse-IP-de-l’ordinateur>:3000` (sur Mac :
+`ipconfig getifaddr en0` affiche cette adresse). Les adresses réseau de l’ordinateur sont autorisées
+automatiquement en développement (`allowedDevOrigins` dans `next.config.ts`). La photo des justificatifs passe
+par l’appareil photo natif du téléphone.
 
 Arrêter la base : `docker compose stop` (les données sont conservées) ; tout effacer : `docker compose down -v`.
 
