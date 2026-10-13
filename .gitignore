@@ -11,8 +11,8 @@ next-env.d.ts
 !.env.example
 
 # Justificatifs stockés localement — jamais dans Git
-storage/
-test-storage/
+/storage/
+/test-storage/
 
 # Tests
 test-results/
