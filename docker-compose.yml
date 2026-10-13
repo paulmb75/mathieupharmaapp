@@ -1,0 +1,22 @@
+# Base PostgreSQL LOCALE pour le développement et la démonstration.
+# Accessible uniquement depuis ce poste (127.0.0.1). Ne pas utiliser en production.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: mathieu
+      POSTGRES_PASSWORD: changer-moi
+      POSTGRES_DB: mathieupharma
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mathieu -d mathieupharma"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  pgdata:

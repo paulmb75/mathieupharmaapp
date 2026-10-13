@@ -28,29 +28,37 @@ la documentation de Next.js correspondant exactement à la version installée es
 
 ## Démarrage local
 
-Prérequis : Node.js ≥ 20.9 (testé avec 22), PostgreSQL ≥ 14 accessible localement.
+Prérequis : [Node.js](https://nodejs.org) ≥ 20.9 (version LTS recommandée), Git, et soit
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) (le plus simple), soit un PostgreSQL ≥ 14 installé.
 
 ```bash
-# 1. Dépendances (le fichier .npmrc active legacy-peer-deps, nécessaire avec npm 10)
+git clone https://github.com/paulmb75/mathieupharmaapp.git
+cd mathieupharmaapp
+git checkout claude/mathieu-pharma-app-fov7fw
+
+# 1. Base PostgreSQL locale (Docker) — crée aussi la base de test
+docker compose up -d
+
+# 2. Configuration : copier, puis choisir un DEMO_PASSWORD (12 caractères minimum)
+cp .env.example .env          # Windows PowerShell : copy .env.example .env
+
+# 3. Dépendances, schéma, données fictives
 npm install
-
-# 2. Configuration : copier puis renseigner DATABASE_URL, TEST_DATABASE_URL et DEMO_PASSWORD
-cp .env.example .env
-
-# 3. Bases PostgreSQL (exemple, à adapter)
-createdb mathieupharma
-createdb mathieupharma_test
-
-# 4. Schéma puis données de démonstration fictives
 npm run db:migrate
 npm run db:seed
 
-# 5. Lancement
-npm run dev            # http://localhost:3000
+# 4. Lancement
+npm run dev                   # puis ouvrir http://localhost:3000
 ```
 
-Pour tester sur un téléphone du même réseau : `npx next dev -H 0.0.0.0` puis ouvrir `http://<ip-du-poste>:3000`
-(l’appareil photo fonctionne via l’import de fichier natif, sans permission particulière).
+Avec un PostgreSQL déjà installé (sans Docker) : créer les bases `mathieupharma` et `mathieupharma_test`, puis
+adapter `DATABASE_URL` et `TEST_DATABASE_URL` dans `.env`.
+
+**Tester sur téléphone** (même réseau Wi-Fi que l’ordinateur) : lancer `npx next dev -H 0.0.0.0`, puis ouvrir
+`http://<adresse-IP-de-l’ordinateur>:3000` sur le téléphone. L’adresse IP s’affiche dans le terminal (ligne
+« Network »). La photo des justificatifs passe par l’appareil photo natif du téléphone.
+
+Arrêter la base : `docker compose stop` (les données sont conservées) ; tout effacer : `docker compose down -v`.
 
 ### Comptes de démonstration (fictifs)
 
